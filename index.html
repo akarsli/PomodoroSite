@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Pomodoro</title>
+        <link rel="stylesheet" href="style.css" />
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    </head>
+    <body id="body">
+        <div class="top">
+            <p>Pomodoro</p>
+            <i class='bx bx-cog' id="setting" onclick="popup_open()"></i>
+        </div>
+        <div class="popup-menu" id="popup-menu">
+            <i class='bx bx-x' id="close-button" onclick="popup_close()"></i>
+            <p class="settings">Settings</p>
+            <hr>
+            <p>Time(Minutes)</p>
+            <div class="changer-name">
+                <p>Pomodoro</p>
+                <p>Short Break</p>
+                <p>Long Break</p>
+            </div>
+            <div class="changer">
+                <input type="number" value="25" min="0" id="pomodoro_time" onclick="updateTimers()">
+                <input type="number" value="5" min="0" id="shortBreak_time" onclick="updateTimers()">
+                <input type="number" value="15" min="0" id="longBreak_time" onclick="updateTimers()">
+            </div>
+            <hr>
+        </div>
+        <div id="zamanlayici">
+            <div class="options">
+                <button id="pomodoro_btn" onclick="pomodoro()">Pomodoro</button>
+                <button id="shot_break_btn" onclick="shortBreak()">Short Break</button>
+                <button id="long_break_btn" onclick="longBreak()">Long Break</button>
+            </div>
+            <div id="pomodoro">
+                <div>
+                    <p class="zaman" id="pomodoro_timer">25:00</p>
+                </div>
+                <div class="buttons">
+                    <button id="startPomodoro" onclick="startPomodoro()"><i class='bx bx-play'></i></button>
+                    <button id="stopPomodoro" onclick="stopPomodoro()"><i class='bx bx-pause' ></i></button>
+                    <button id="resetPomodoro" onclick="resetPomodoro()"><i class='bx bx-rotate-left'></i></button>
+                </div>
+            </div>
+            <div id="shortbreak">
+                <div>
+                    <p class="zaman" id="shortBreak_timer">05:00</p>
+                </div>
+                <div class="buttons">
+                    <button id="startShortBreak" onclick="startShortBreak()"><i class='bx bx-play'></i></button>
+                    <button id="stopShortBreak" onclick="stopShortBreak()"><i class='bx bx-pause' ></i></button>
+                    <button id="resetShortBreak" onclick="resetShortBreak()"><i class='bx bx-rotate-left'></i></button>
+                </div>
+            </div>
+            <div id="longbreak">
+                <div>
+                    <p class="zaman" id="longBreak_timer">15:00</p>
+                </div>
+                <div class="buttons">
+                    <button id="startLongBreak" onclick="startLongBreak()"><i class='bx bx-play'></i></button>
+                    <button id="stopLongBreak" onclick="stopLongBreak()"><i class='bx bx-pause' ></i></button>
+                    <button id="resetLongBreak" onclick="resetLongBreak()"><i class='bx bx-rotate-left'></i></button>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>

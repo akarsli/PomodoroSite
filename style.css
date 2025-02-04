@@ -1,0 +1,148 @@
+body{
+    margin: 0;
+    background-color: #923737;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.5s;
+}
+
+.top{
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    width: 450px;
+    color: white;
+}
+
+input{
+    width: 80px;
+    height: 30px;
+    font-size: 1.5rem;
+    text-align: center;
+    border: none;
+    border-radius: 15px;
+    color: white;
+    background-color: hsla(0, 0%, 27%, 0.741);
+    margin-left: 25px;
+    margin-right: 18px;
+}
+
+#degistirici-btn{
+    width: 200px;
+    height: 40px;
+    font-size: 1.5rem;
+}
+
+.popup-menu{
+    position: absolute;
+    margin-top: 120px;
+    width: 400px;
+    z-index: 1;
+    text-align: center;
+    background-color: hsla(0, 0%, 50%, 0.947);
+    color: white;
+    font-size: 1.2rem;
+    border-radius: 15px;
+    display: none;
+    transition: 0.5s;
+}
+
+.settings{
+    font-size: 2rem;
+}
+
+.changer-name{
+    display: flex;
+    justify-content: center;
+}
+
+.changer-name p{
+    margin: 20px;
+    margin-bottom: 2px;
+}
+
+#setting{
+    position: flex;
+    margin-left: 280px;
+    cursor: pointer;
+}
+
+#setting:hover{
+    color: hsla(0, 0%, 0%, 0.44);
+    transition: 0.5s;
+}
+
+#close-button{
+    position: absolute;
+    right: 20px;
+    top: 35px;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+#close-button:hover{
+    color: hsla(0, 0%, 0%, 0.44);
+    transition: 0.5s;
+}
+
+#zamanlayici{
+    color: white;
+    background-color: hsla(0, 0%, 100%, 0.117);
+    justify-content: center;
+    align-items: center;
+    display:flex;
+    flex-direction: column;
+    margin-top: 100px;
+    width: 450px;
+    height: 300px;
+    border: none;
+    border-radius: 15px;
+}
+
+.options{
+    position: absolute;
+    top: 220px;
+}
+
+.options button{
+    background: none;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 8px;
+    margin: 10px;
+    background-color: hsla(0, 0%, 100%, 0.192);
+    cursor: pointer;
+}
+
+.zaman{
+    font-size: 7rem;
+    margin-top: 55px;
+    margin-bottom: 10px;
+}
+
+#shortbreak{
+    display: none;
+}
+
+#longbreak{
+    display: none;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+}
+
+.buttons button{
+    font-size: 4rem;
+    background: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#stopPomodoro, #resetPomodoro, #stopShortBreak, #resetShortBreak, #stopLongBreak, #resetLongBreak{
+    display: none;
+}
