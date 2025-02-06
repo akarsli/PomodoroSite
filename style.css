@@ -86,6 +86,22 @@ input{
     transition: 0.5s;
 }
 
+.autoBreak{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.autoBreak p{
+    display: flex;
+    margin-right: 180px;
+}
+
+#autoBreakChecker{
+    position: absolute;
+    right: 0px;
+}
+
 #zamanlayici{
     color: white;
     background-color: hsla(0, 0%, 100%, 0.117);
@@ -112,8 +128,11 @@ input{
     color: white;
     padding: 8px;
     margin: 10px;
-    background-color: hsla(0, 0%, 100%, 0.192);
     cursor: pointer;
+}
+
+#pomodoro_btn{
+    background-color: hsla(0, 0%, 100%, 0.192);
 }
 
 .zaman{

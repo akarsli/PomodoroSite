@@ -6,15 +6,44 @@ let shortBreakTime = shortBreakStartingMin * 60;
 let longBreakTime = longBreakStartingMin * 60;
 let pomodoroFlag = false, shortBreakFlag = false, longBreakFlag = false;
 let intervalIdPomodoro = null, intervalIdShortBreak = null, intervalIdLongBreak = null;
+let pomodoroCounter = 1;
 
 const pomodoro_timer = document.getElementById("pomodoro_timer");
 const shortBreak_timer = document.getElementById("shortBreak_timer");
 const longBreak_timer = document.getElementById("longBreak_timer");
+const timerSound = document.getElementById("timerSound");
+const checkbox = document.getElementById("autoBreakChecker");
+
+
+
+
+function checker(){
+    if(checkbox.checked){
+        if(pomodoroTime === 0){
+            if(pomodoroCounter == 3){
+                longBreak();
+                startLongBreak();
+                pomodoroCounter = 0;
+            } else {
+                shortBreak();
+                startShortBreak();
+            }
+        }
+        if(shortBreakTime === 0 || longBreakTime === 0){
+            pomodoro();
+            startPomodoro();
+        }
+    }
+    document.getElementById("zamangosterici").textContent = `${pomodoroCounter}`;
+}
 
 function pomodoro(){
     document.getElementById("pomodoro").style.display = "block";
     document.getElementById("shortbreak").style.display = "none";
     document.getElementById("longbreak").style.display = "none";
+    document.getElementById("pomodoro_btn").style.backgroundColor = "hsla(0, 0%, 100%, 0.192)"
+    document.getElementById("short_break_btn").style.background = "none"
+    document.getElementById("long_break_btn").style.background = "none"
 
     resetLongBreak();
     resetShortBreak();
@@ -26,7 +55,10 @@ function shortBreak(){
     document.getElementById("pomodoro").style.display = "none";
     document.getElementById("shortbreak").style.display = "block";
     document.getElementById("longbreak").style.display = "none";
-
+    document.getElementById("short_break_btn").style.backgroundColor = "hsla(0, 0%, 100%, 0.192)"
+    document.getElementById("pomodoro_btn").style.background = "none"
+    document.getElementById("long_break_btn").style.background = "none"
+    
     resetLongBreak();
     resetPomodoro();
     
@@ -37,6 +69,10 @@ function longBreak(){
     document.getElementById("pomodoro").style.display = "none";
     document.getElementById("shortbreak").style.display = "none";
     document.getElementById("longbreak").style.display = "block";
+    document.getElementById("long_break_btn").style.backgroundColor = "hsla(0, 0%, 100%, 0.192)"
+    document.getElementById("short_break_btn").style.background = "none"
+    document.getElementById("pomodoro_btn").style.background = "none"
+    
 
     resetShortBreak();
     resetPomodoro();
@@ -57,7 +93,9 @@ function startPomodoro(){
 function updateZamanlayiciPomodoro(){
     if (pomodoroTime === 0) {
         stopPomodoro();
-        window.alert("Süre doldu!");
+        timerSound.play();
+        checker();
+        pomodoroCounter++;
         return;
     }
     pomodoroTime--;
@@ -91,7 +129,8 @@ function startShortBreak(){
 function updateZamanlayiciShortBreak(){
     if (shortBreakTime === 0) {
         stopShortBreak();
-        window.alert("Süre doldu!");
+        timerSound.play();
+        checker();
         return;
     }
     shortBreakTime--;
@@ -125,7 +164,8 @@ function startLongBreak(){
 function updateZamanlayiciLongBreak(){
     if (longBreakTime === 0) {
         stopLongBreak();
-        window.alert("Süre doldu!");
+        timerSound.play();
+        checker();
         return;
     }
     longBreakTime--;

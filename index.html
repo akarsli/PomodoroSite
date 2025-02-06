@@ -8,6 +8,7 @@
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     </head>
     <body id="body">
+        <audio id="timerSound" src="zilsesi.mp3" preload="auto"></audio>
         <div class="top">
             <p>Pomodoro</p>
             <i class='bx bx-cog' id="setting" onclick="popup_open()"></i>
@@ -23,16 +24,20 @@
                 <p>Long Break</p>
             </div>
             <div class="changer">
-                <input type="number" value="25" min="0" id="pomodoro_time" onclick="updateTimers()">
-                <input type="number" value="5" min="0" id="shortBreak_time" onclick="updateTimers()">
-                <input type="number" value="15" min="0" id="longBreak_time" onclick="updateTimers()">
+                <input type="number" value="25" min="0" id="pomodoro_time" oninput="updateTimers()">
+                <input type="number" value="5" min="0" id="shortBreak_time" oninput="updateTimers()">
+                <input type="number" value="15" min="0" id="longBreak_time" oninput="updateTimers()">
             </div>
             <hr>
+            <div class="autoBreak">
+                <p>Geçişleri otomatikleştir</p>
+                <input type="checkbox" name="" id="autoBreakChecker">
+            </div>
         </div>
         <div id="zamanlayici">
             <div class="options">
                 <button id="pomodoro_btn" onclick="pomodoro()">Pomodoro</button>
-                <button id="shot_break_btn" onclick="shortBreak()">Short Break</button>
+                <button id="short_break_btn" onclick="shortBreak()">Short Break</button>
                 <button id="long_break_btn" onclick="longBreak()">Long Break</button>
             </div>
             <div id="pomodoro">
