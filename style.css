@@ -152,6 +152,15 @@ input {
   background-color: hsla(0, 0%, 100%, 0.192);
 }
 
+#pomodoro {
+  display: block; /* sadece başlangıçta gösterilecek */
+}
+
+#shortbreak,
+#longbreak {
+  display: none; /* başlangıçta gizle */
+}
+
 /* --- RESPONSIVE (MOBİL) --- */
 @media (max-width: 600px) {
   .top {
