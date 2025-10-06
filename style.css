@@ -156,8 +156,7 @@ input {
   display: block; /* sadece başlangıçta gösterilecek */
 }
 
-#shortbreak,
-#longbreak {
+#stopPomodoro, #resetPomodoro, #stopShortBreak, #resetShortBreak, #stopLongBreak, #resetLongBreak, #shortbreak, #longbreak {
   display: none; /* başlangıçta gizle */
 }
 
